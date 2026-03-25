@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Custom Redirects</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-family: Arial, sans-serif;
+      width: 300px;
+      margin: 0;
+      padding: 12px;
+      background: #f7faff;
+      color: #000;
+      overflow: hidden;
+    }
+    body.dark {
+      background: #1e1e1e;
+      color: #f0f0f0;
+    }
+    h2 {
+      font-size: 18px;
+      margin: 0 0 8px 0;
+    }
+    input[type="text"], button {
+      width: 100%;
+      margin: 4px 0;
+      padding: 8px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #2b6cb0;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2c5282;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+    li {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 0;
+      background: #fff;
+      border-radius: 6px;
+    }
+    .dark li {
+      background: #2b2b2b;
+    }
+    .trigger-box, .target-box {
+      width: 85px;
+      padding: 6px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .arrow {
+      width: 10px;
+      text-align: center;
+    }
+    .del-btn {
+      width: 20px;
+      height: 28px;
+      font-size: 16px;
+      background-color: #e53e3e;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      padding: 0;
+    }
+    .del-btn:hover {
+      background-color: #c53030;
+    }
+    .toolbar {
+      display: flex;
+      gap: 6px;
+      margin-top: 10px;
+    }
+    .half {
+      width: 50%;
+    }
+  </style>
+</head>
+<body class="light">
+  <h2>🔗 Custom Redirects</h2>
+  <input id="trigger" type="text" placeholder="Trigger phrase (e.g. 1)">
+  <input id="target" type="text" placeholder="Target (e.g. chat.openai.com or 'hello')">
+  <button id="add">Add Redirect</button>
+  <ul id="list"></ul>
+  <div class="toolbar">
+    <button id="export" class="half">Export</button>
+    <button id="import" class="half">Import</button>
+  </div>
+  <button id="toggleTheme">🌗 Toggle Theme</button>
+  <input type="file" id="fileInput" accept=".json" style="display: none;">
+  <script src="options.js"></script>
+</body>
+</html>
